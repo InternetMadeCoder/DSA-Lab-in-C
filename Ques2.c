@@ -112,6 +112,7 @@ int main() {
 
             default:
                 printf("Invalid choice.\n");
+                break;
         }
     } while (ch != 6);
 }
