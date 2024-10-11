@@ -168,17 +168,26 @@ void display() {
 
 void search() {
     // Code for searching an element in the list
+    if(head == NULL) {
+        printf("Empty list.\n\n");
+    }
+
     int element;
     printf("Enter element to search: ");
     scanf("%d", &element);
+
+    int position = 1;
     
     struct Node *temp=head;
-    for(int i=2; temp!=NULL; temp=temp->next) {
+    do {
         if(temp->data == element) {
-            printf("%d found at %d position.\n\n", element, i);
+            printf("Element found at %d position.\n\n", position);
             return;
         }
-    }
+        temp = temp->next;
+        position++;
+    } while(temp!=NULL);
+    
     printf("%d NOT FOUND\n\n");
 }
 
